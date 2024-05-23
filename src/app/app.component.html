@@ -1,0 +1,22 @@
+<button (click)="onDownload()">Start Download</button>
+<input type="file" (change)="onFileSelected($event)" accept=".xlsx, .xls">
+<div class="box" id="_monitor">
+  <div [id]="'flex_' + i" class="print-area" *ngFor="let pair of pairs; let i = index;">
+    <div class="paper">
+      <ul class="word-list">
+        <li class="word" *ngFor="let g of pair">
+          <p>{{ g.word }} <br> <small>{{ g.pronunciation }}</small></p>
+        </li>
+      </ul>
+    </div>
+    <div class="paper">
+      <ul class="translate-list">
+        <li class="translate" *ngFor="let g of pair">{{ g.translate }}</li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div id='testdiv' style='height: 1in; left: -100%; position: absolute; top: -100%; width: 1in;'></div>
